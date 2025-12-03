@@ -22,7 +22,7 @@ Autonomous knowledge acquisition from academic research papers for AGI self-impr
 ## Installation
 
 ```bash
-cd /Volumes/SSDRAID0/agentic-system/mcp-servers/research-paper-mcp
+cd ${AGENTIC_SYSTEM_PATH:-/opt/agentic}/agentic-system/mcp-servers/research-paper-mcp
 pip install -r requirements.txt
 ```
 
@@ -36,7 +36,7 @@ Add to `~/.claude.json`:
     "research-paper-mcp": {
       "command": "python3",
       "args": [
-        "/Volumes/SSDRAID0/agentic-system/mcp-servers/research-paper-mcp/server.py"
+        "${AGENTIC_SYSTEM_PATH:-/opt/agentic}/agentic-system/mcp-servers/research-paper-mcp/server.py"
       ],
       "env": {},
       "disabled": false
@@ -207,7 +207,7 @@ if analysis['citation_graph']['influential_citations'] > 100:
 
 ## Storage
 
-- **Papers Directory**: `/Volumes/SSDRAID0/agentic-system/research-papers/`
+- **Papers Directory**: `${AGENTIC_SYSTEM_PATH:-/opt/agentic}/agentic-system/research-papers/`
 - **PDFs**: Saved as `{paper_id}.pdf`
 - **Memory Integration**: Via enhanced-memory-mcp create_entities
 
